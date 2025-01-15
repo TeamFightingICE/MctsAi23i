@@ -18,8 +18,6 @@ public class Node {
 
   /** UCTの実行時間 */
   public static final int UCT_TIME = 165 * 100000;
-  
-  public static final int ITERATION_LIMIT = 23;
 
   /** UCB1の定数Cの値 */
   public static final double UCB_C = 3;
@@ -104,7 +102,7 @@ public class Node {
 
     this.selectedMyActions = new LinkedList<Action>();
 
-    this.rnd = new Random();
+    this.rnd = new Random(1l);
     this.mAction = new LinkedList<Action>();
     this.oppAction = new LinkedList<Action>();
 
@@ -128,7 +126,7 @@ public class Node {
   public Action mcts() {
     // 時間の限り、UCTを繰り返す
     long start = System.nanoTime();
-    for (int i = 0; System.nanoTime() - start <= UCT_TIME && i < ITERATION_LIMIT; i++) {
+    for (int i = 0; System.nanoTime() - start <= UCT_TIME; i++) {
       uct();
     }
 
@@ -260,7 +258,7 @@ public class Node {
 
     for (int i = 0; i < children.length; i++) {
 
-      if (MctsAi23i.DEBUG_MODE) {
+      if (MctsAiSeed1.DEBUG_MODE) {
         System.out.println("評価値:" + children[i].score / children[i].games + ",試行回数:"
             + children[i].games + ",ucb:" + children[i].ucb + ",Action:" + myActions.get(i));
       }
@@ -271,7 +269,7 @@ public class Node {
       }
     }
 
-    if (MctsAi23i.DEBUG_MODE) {
+    if (MctsAiSeed1.DEBUG_MODE) {
       System.out.println(myActions.get(selected) + ",全試行回数:" + games);
       System.out.println("");
     }
@@ -291,7 +289,7 @@ public class Node {
 
     for (int i = 0; i < children.length; i++) {
     	
-      if (MctsAi23i.DEBUG_MODE) {
+      if (MctsAiSeed1.DEBUG_MODE) {
           System.out.println("評価値:" + children[i].score / children[i].games + ",試行回数:"
               + children[i].games + ",ucb:" + children[i].ucb + ",Action:" + myActions.get(i));
       }
@@ -303,7 +301,7 @@ public class Node {
       }
     }
 
-    if (MctsAi23i.DEBUG_MODE) {
+    if (MctsAiSeed1.DEBUG_MODE) {
       System.out.println(myActions.get(selected) + ",全試行回数:" + games);
       System.out.println("");
     }
