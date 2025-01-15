@@ -258,7 +258,7 @@ public class Node {
 
     for (int i = 0; i < children.length; i++) {
 
-      if (MctsAiSeed1.DEBUG_MODE) {
+      if (MctsAiSeed2.DEBUG_MODE) {
         System.out.println("評価値:" + children[i].score / children[i].games + ",試行回数:"
             + children[i].games + ",ucb:" + children[i].ucb + ",Action:" + myActions.get(i));
       }
@@ -269,7 +269,7 @@ public class Node {
       }
     }
 
-    if (MctsAiSeed1.DEBUG_MODE) {
+    if (MctsAiSeed2.DEBUG_MODE) {
       System.out.println(myActions.get(selected) + ",全試行回数:" + games);
       System.out.println("");
     }
@@ -289,7 +289,7 @@ public class Node {
 
     for (int i = 0; i < children.length; i++) {
     	
-      if (MctsAiSeed1.DEBUG_MODE) {
+      if (MctsAiSeed2.DEBUG_MODE) {
           System.out.println("評価値:" + children[i].score / children[i].games + ",試行回数:"
               + children[i].games + ",ucb:" + children[i].ucb + ",Action:" + myActions.get(i));
       }
@@ -301,7 +301,7 @@ public class Node {
       }
     }
 
-    if (MctsAiSeed1.DEBUG_MODE) {
+    if (MctsAiSeed2.DEBUG_MODE) {
       System.out.println(myActions.get(selected) + ",全試行回数:" + games);
       System.out.println("");
     }

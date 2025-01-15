@@ -17,7 +17,7 @@ import struct.MotionData;
  *
  * @author Taichi
  */
-public class MctsAiSeed1 implements AIInterface {
+public class MctsAiSeed2 implements AIInterface {
 
 	private Simulator simulator;
 	private Key key;
