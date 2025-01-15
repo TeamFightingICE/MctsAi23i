@@ -102,7 +102,7 @@ public class Node {
 
     this.selectedMyActions = new LinkedList<Action>();
 
-    this.rnd = new Random(1l);
+    this.rnd = new Random(2l);
     this.mAction = new LinkedList<Action>();
     this.oppAction = new LinkedList<Action>();
 
